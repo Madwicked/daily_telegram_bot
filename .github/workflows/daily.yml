@@ -1,0 +1,24 @@
+name: Daily Telegram Bot
+
+on:
+  schedule:
+    - cron: '0 10 * * *' # каждый день в 10:00 UTC
+  workflow_dispatch: # позволяет запускать вручную
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install requests
+        run: pip install requests
+      - name: Run bot
+        run: python bot.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
