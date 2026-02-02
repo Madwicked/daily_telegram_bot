@@ -2,7 +2,7 @@ name: Daily Telegram Bot
 
 on:
   schedule:
-    - cron: '30 18 * * *' # каждый день в 10:00 UTC
+    - cron: '00 18 * * *' 
   workflow_dispatch: # позволяет запускать вручную
 
 jobs:
