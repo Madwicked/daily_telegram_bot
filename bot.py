@@ -14,6 +14,7 @@ TEXT = (
     "🔍 <a href='https://docs.google.com/spreadsheets/d/1VM8PoYVnGRnCutLV7nvMJ9U1qT8G5d4Y8M-sMjopmCA/edit?gid=1788470692#gid=1788470692'>Просмотр таймингов</a>"
 )
 
+
 if datetime.utcnow().weekday() != 6:
     r = requests.post(
         f"https://api.telegram.org/bot{TOKEN}/sendMessage",
